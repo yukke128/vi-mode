@@ -329,7 +329,9 @@ type is ether 'line' or 'relative'"
   (define-key *vi-mode-map* #\ESC 'vi-esc)
   (define-key *vi-mode-map* #\TAB 'vi-tab)
   (define-key *vi-mode-map* #\: 'vi-ex)
-  (define-key *vi-mode-map* #\a 'vi-a)  
+  (define-key *vi-mode-map* #\a 'vi-a)
+  (define-key *vi-mode-map* #\A 'vi-A)
+  (define-key *vi-mode-map* #\I 'vi-I)
   (define-key *vi-mode-map* #\i 'goto-insert-state))
 
 
@@ -408,18 +410,23 @@ type is ether 'line' or 'relative'"
   (interactive "p")
   (vi-toggle-mode t))
 
-  
-
+;; insertƒ‚[ƒh‚ÌIMEó‘Ô‚ğ•Û‚·‚é•Ï”
+(setq insert-state-ime-state nil)
 
 (defun goto-normal-state ()
   (interactive)
   (setq *vi-state* 'normal)
+  (setq insert-state-ime-state (get-ime-mode)) ;; ime state regist
+  (toggle-ime nil)                             ;; ime off
+  (setq  *normal-caret-shape* 0)               ;; caret block
   (unset-minor-mode-map *vi-insert-mode-map*)
   (set-minor-mode-map *vi-mode-map*))
 
 (defun goto-insert-state ()
   (interactive)  
   (setq *vi-state* 'insert)
+  (toggle-ime insert-state-ime-state) ;; IMEó‘Ô‚Ì•œŒ³
+  (setq  *normal-caret-shape* 1)      ;; caret shape
   (unset-minor-mode-map *vi-mode-map*)
   (set-minor-mode-map *vi-insert-mode-map*))
 
@@ -591,6 +598,22 @@ type is ether 'line' or 'relative'"
   (unless (eolp)
     (forward-char))
   (goto-insert-state))
+
+(defun vi-A()
+  (interactive)
+  (setq *vi-num* nil)
+;  (unless (eolp)
+;    (forward-char))
+  (end-of-line)      ; s––‚Ö
+  (goto-insert-state))
+
+(defun vi-I()
+  (interactive)
+  (setq *vi-num* nil)
+  (back-to-indentation)
+;  (beginning-of-line)
+  (goto-insert-state))
+
 
 (defun vi-o()
   (interactive)
