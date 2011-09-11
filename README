@@ -1,13 +1,13 @@
-Ž×“¹‚Æ•ª‚©‚Á‚Ä‚¢‚Ä‚àA‚à‚¤hjkl‚ÌŽô”›‚©‚ç‚Í“¦‚ê‚ç‚ê‚È‚¢‚Ì‚Å‚·B
+ï»¿é‚ªé“ã¨åˆ†ã‹ã£ã¦ã„ã¦ã‚‚ã€ã‚‚ã†hjklã®å‘ªç¸›ã‹ã‚‰ã¯é€ƒã‚Œã‚‰ã‚Œãªã„ã®ã§ã™ã€‚
 
-[Žg‚¢•û]
- ;ƒCƒ“ƒXƒg[ƒ‹F‰º‹L‚ð•]‰¿
+[ä½¿ã„æ–¹]
+ ;ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ï¼šä¸‹è¨˜ã‚’è©•ä¾¡
  (load-library "vi")
  (add-hook '*find-file-hooks* 'vi-mode)
- ;‘€ì•û–@ : hjkl‚ÅˆÚ“®Bi or a ‚ÅƒCƒ“ƒT[ƒgƒ‚[ƒhBESC‚Å•ÒWƒ‚[ƒh
+ ;æ“ä½œæ–¹æ³• : hjklã§ç§»å‹•ã€‚i or a ã§ã‚¤ãƒ³ã‚µãƒ¼ãƒˆãƒ¢ãƒ¼ãƒ‰ã€‚ESCã§ç·¨é›†ãƒ¢ãƒ¼ãƒ‰
 
 
 2011/02/11
- —L–ìŽ‚ÌƒIƒŠƒWƒiƒ‹‚©‚ç‚Ì•ÏX‚Í
- EA,I(s“ªAs––‚©‚çƒCƒ“ƒT[ƒgƒ‚[ƒh)’Ç‰Á
- Eƒ‚[ƒh•ÏŠ·Žž‚ÉIME‚ÌOnOff‚ð‹L‰¯‚Ætoggle
+ æœ‰é‡Žæ°ã®ã‚ªãƒªã‚¸ãƒŠãƒ«ã‹ã‚‰ã®å¤‰æ›´ã¯
+ ãƒ»A,I(è¡Œé ­ã€è¡Œæœ«ã‹ã‚‰ã‚¤ãƒ³ã‚µãƒ¼ãƒˆãƒ¢ãƒ¼ãƒ‰)è¿½åŠ 
+ ãƒ»ãƒ¢ãƒ¼ãƒ‰å¤‰æ›æ™‚ã«IMEã®OnOffã‚’è¨˜æ†¶ã¨toggle
